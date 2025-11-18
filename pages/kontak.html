@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Balai Desa Asemdoyong</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Balai Desa Asemdoyong</h2>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="visi-misi.html">Visi & Misi</a></li>
+                <li><a href="organisasi.html">Organisasi</a></li>
+                <li><a href="layanan.html">Layanan</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html" class="active">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Hubungi Kami</h1>
+            <p>Kami siap melayani dan menjawab pertanyaan Anda</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <p style="font-size: 1.1rem; color: #666; max-width: 800px; margin: 0 auto;">
+                    Untuk informasi lebih lanjut atau keperluan administrasi, silakan hubungi kami melalui kontak di bawah ini
+                </p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Informasi Kontak</h3>
+                    
+                    <div class="info-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Desa Asemdoyong, Kecamatan Taman, Kabupaten Pemalang, Jawa Tengah</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">📞</div>
+                        <div>
+                            <h4>Telepon / WhatsApp</h4>
+                            <p><a href="tel:087764204678" style="color: var(--primary); text-decoration: none;">0877-6420-4678</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:asemdoyong@gmail.com" style="color: var(--primary); text-decoration: none;">asemdoyong@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">🕐</div>
+                        <div>
+                            <h4>Jam Pelayanan</h4>
+                            <p><strong>Senin - Kamis:</strong> 08.00 - 15.00 WIB</p>
+                            <p><strong>Jumat:</strong> 08.00 - 11.30 WIB</p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">*Istirahat: 12.00 - 13.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-info">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Kirim Pesan</h3>
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid #e0f4ff; border-radius: 8px; font-size: 1rem; transition: 0.3s;">
+                        </div>
+
+                        <div>
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid #e0f4ff; border-radius: 8px; font-size: 1rem; transition: 0.3s;">
+                        </div>
+
+                        <div>
+                            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Nomor Telepon</label>
+                            <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 2px solid #e0f4ff; border-radius: 8px; font-size: 1rem; transition: 0.3s;">
+                        </div>
+
+                        <div>
+                            <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Subjek</label>
+                            <input type="text" id="subject" name="subject" required style="width: 100%; padding: 0.75rem; border: 2px solid #e0f4ff; border-radius: 8px; font-size: 1rem; transition: 0.3s;">
+                        </div>
+
+                        <div>
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Pesan</label>
+                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 2px solid #e0f4ff; border-radius: 8px; font-size: 1rem; resize: vertical; transition: 0.3s;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem; cursor: pointer; border: none;">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div style="margin-top: 4rem;">
+                <h2 style="color: var(--primary); margin-bottom: 2rem; text-align: center;">Lokasi Kami</h2>
+                <div class="map-container">
+                    <!-- Google Maps Embed - Koordinat umum Kecamatan Taman, Pemalang -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126463.67891234567!2d109.3!3d-6.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7025f0e0e0e0e0%3A0x0!2sTaman%2C%20Pemalang%20Regency%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                    *Peta menunjukkan lokasi wilayah Kecamatan Taman, Kabupaten Pemalang
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div style="margin-top: 4rem;">
+                <h2 style="color: var(--primary); margin-bottom: 2rem; text-align: center;">Layanan Cepat</h2>
+                <div class="info-grid">
+                    <div class="info-card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📄</div>
+                        <h3>Pengaduan Online</h3>
+                        <p>Sampaikan kritik dan saran Anda untuk perbaikan pelayanan</p>
+                    </div>
+
+                    <div class="info-card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">❓</div>
+                        <h3>Pertanyaan Umum</h3>
+                        <p>Informasi seputar layanan dan administrasi desa</p>
+                    </div>
+
+                    <div class="info-card" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+                        <h3>Media Sosial</h3>
+                        <p>Ikuti informasi terbaru melalui media sosial desa</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Box -->
+            <div style="margin-top: 3rem;">
+                <div class="info-card" style="background: #d1ecf1; border-left: 5px solid #0c5460;">
+                    <h3 style="color: #0c5460;">ℹ️ Informasi Penting</h3>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem; line-height: 1.8;">
+                        <li>Untuk keperluan mendesak di luar jam kerja, silakan hubungi nomor WhatsApp</li>
+                        <li>Pastikan menyertakan informasi lengkap saat mengirim pesan atau email</li>
+                        <li>Kami berusaha merespons setiap pesan dalam 1-2 hari kerja</li>
+                        <li>Untuk pelayanan administrasi, silakan datang langsung ke kantor desa dengan membawa persyaratan lengkap</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="wave-footer"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Balai Desa Asemdoyong</h3>
+                    <p>Melayani dengan sepenuh hati untuk kemajuan desa</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p>📍 Asemdoyong, Kec. Taman, Kab. Pemalang</p>
+                    <p>📞 0877-6420-4678</p>
+                    <p>✉️ asemdoyong@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Link Cepat</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang</a></li>
+                        <li><a href="layanan.html">Layanan</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Balai Desa Asemdoyong. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+    <style>
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+    </style>
+</body>
+</html>
