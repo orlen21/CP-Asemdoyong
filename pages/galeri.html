@@ -11,8 +11,9 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                 <a href="galeri.html">
-    <img src="../assets/img/logo1.png" alt="Logo Desa" class="logo"></a>
+                <a href="../index.html">
+                    <img src="../assets/img/logo1.png" alt="Logo Desa" class="logo">
+                </a>
                 <h2>Balai Desa Asemdoyong</h2>
             </div>
             <button class="nav-toggle" id="navToggle">
@@ -43,139 +44,66 @@
     <!-- Page Content -->
     <section class="page-content">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <p style="font-size: 1.1rem; color: #666; max-width: 800px; margin: 0 auto;">
-                    Dokumentasi berbagai kegiatan dan program pembangunan di Desa Asemdoyong
-                </p>
+            <div class="gallery-intro">
+                <h2>Pelayanan Masyarakat</h2>
+                <p>Dokumentasi berbagai kegiatan pelayanan dan program pembangunan di Desa Asemdoyong untuk meningkatkan kesejahteraan masyarakat</p>
             </div>
 
             <!-- Gallery Grid -->
             <div class="gallery-grid">
-                <!-- Placeholder Images with Ocean Theme -->
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0077be 0%, #00a8cc 100%); color: white; font-size: 3rem;">
-                        🏛️
+                <div class="gallery-item" onclick="openFullscreen(this)">
+                    <img src="../assets/img/kegiatan1.jpg" alt="Kegiatan Pelayanan Masyarakat 1">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
 
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00a8cc 0%, #00d4ff 100%); color: white; font-size: 3rem;">
-                        👥
+                <div class="gallery-item" onclick="openFullscreen(this)">
+                    <img src="../assets/img/kegiatan2.jpg" alt="Kegiatan Pelayanan Masyarakat 2">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
 
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0077be 0%, #003d5c 100%); color: white; font-size: 3rem;">
-                        🎓
+                <div class="gallery-item" onclick="openFullscreen(this)">
+                    <img src="../assets/img/kegiatan3.jpg" alt="Kegiatan Pelayanan Masyarakat 3">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
 
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00d4ff 0%, #0077be 100%); color: white; font-size: 3rem;">
-                        🏥
+                <div class="gallery-item" onclick="openFullscreen(this)">
+                    <img src="../assets/img/kegiatan4.jpg" alt="Kegiatan Pelayanan Masyarakat 4">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
 
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #003d5c 0%, #00a8cc 100%); color: white; font-size: 3rem;">
-                        🌾
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00a8cc 0%, #0077be 100%); color: white; font-size: 3rem;">
-                        🤝
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0077be 0%, #00d4ff 100%); color: white; font-size: 3rem;">
-                        🎉
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00d4ff 0%, #003d5c 100%); color: white; font-size: 3rem;">
-                        💼
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #003d5c 0%, #0077be 100%); color: white; font-size: 3rem;">
-                        🏘️
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00a8cc 0%, #00d4ff 100%); color: white; font-size: 3rem;">
-                        🚜
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0077be 0%, #00a8cc 100%); color: white; font-size: 3rem;">
-                        📚
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00d4ff 0%, #0077be 100%); color: white; font-size: 3rem;">
-                        🌱
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kategori Galeri -->
-           <div style="margin-top: 4rem;">
-                <h2 style="color: var(--primary); margin-bottom: 2rem; text-align: center;">Kategori Kegiatan</h2>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>🏛️ Pemerintahan Desa</h3>
-                        <p>Dokumentasi kegiatan pemerintahan dan administrasi desa</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>👥 Musyawarah & Rapat</h3>
-                        <p>Kegiatan musyawarah desa dan rapat koordinasi</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>🎓 Pendidikan & Pelatihan</h3>
-                        <p>Program pelatihan dan pemberdayaan masyarakat</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>🏥 Kesehatan</h3>
-                        <p>Kegiatan posyandu dan program kesehatan desa</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>🌾 Pertanian & Ekonomi</h3>
-                        <p>Kegiatan pertanian dan pengembangan UMKM</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>🎉 Kegiatan Sosial</h3>
-                        <p>Acara kemasyarakatan dan perayaan desa</p>
+                <div class="gallery-item" onclick="openFullscreen(this)">
+                    <img src="../assets/img/kantor.jpg" alt="Kantor Balai Desa Asemdoyong">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
             </div>
 
             <!-- Info Tambahan -->
-            <div style="margin-top: 4rem;">
-                <div class="info-card" style="background: linear-gradient(135deg, #e0f4ff 0%, #ffffff 100%); text-align: center;">
-                    <h3 style="color: var(--primary);">📸 Bagikan Momen Anda</h3>
-                    <p style="margin-top: 1rem; line-height: 1.8;">
-                        Punya foto kegiatan desa yang ingin dibagikan? Kirimkan ke kami melalui email atau WhatsApp. 
-                        Mari bersama-sama mendokumentasikan perkembangan Desa Asemdoyong.
-                    </p>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="kontak.html" class="btn-primary">Hubungi Kami</a>
-                    </div>
+            <div class="share-section">
+                <div class="info-card">
+                    <h3>📸 Bagikan Momen Anda</h3>
+                    <p>Punya foto kegiatan desa yang ingin dibagikan? Kirimkan ke kami melalui email atau WhatsApp. Mari bersama-sama mendokumentasikan perkembangan Desa Asemdoyong.</p>
+                    <a href="kontak.html" class="btn-primary">Hubungi Kami</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Fullscreen Modal -->
+    <div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullscreen()">
+        <span class="close-btn">&times;</span>
+        <img id="fullscreenImage" src="" alt="Fullscreen Image">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -208,5 +136,37 @@
     </footer>
 
     <script src="../assets/js/script.js"></script>
+    <script>
+        // Fullscreen Gallery Functions
+        function openFullscreen(element) {
+            const modal = document.getElementById('fullscreenModal');
+            const modalImg = document.getElementById('fullscreenImage');
+            const caption = document.getElementById('modalCaption');
+            const img = element.querySelector('img');
+            
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+            caption.textContent = img.alt;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFullscreen() {
+            const modal = document.getElementById('fullscreenModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFullscreen();
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
