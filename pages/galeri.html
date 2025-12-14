@@ -51,35 +51,35 @@
 
             <!-- Gallery Grid -->
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openFullscreen(this)">
+                <div class="gallery-item">
                     <img src="../assets/img/kegiatan1.jpg" alt="Kegiatan Pelayanan Masyarakat 1">
                     <div class="gallery-overlay">
                         <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
 
-                <div class="gallery-item" onclick="openFullscreen(this)">
+                <div class="gallery-item">
                     <img src="../assets/img/kegiatan2.jpg" alt="Kegiatan Pelayanan Masyarakat 2">
                     <div class="gallery-overlay">
                         <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
 
-                <div class="gallery-item" onclick="openFullscreen(this)">
+                <div class="gallery-item">
                     <img src="../assets/img/kegiatan3.jpg" alt="Kegiatan Pelayanan Masyarakat 3">
                     <div class="gallery-overlay">
                         <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
 
-                <div class="gallery-item" onclick="openFullscreen(this)">
+                <div class="gallery-item">
                     <img src="../assets/img/kegiatan4.jpg" alt="Kegiatan Pelayanan Masyarakat 4">
                     <div class="gallery-overlay">
                         <span class="zoom-icon">🔍</span>
                     </div>
                 </div>
 
-                <div class="gallery-item" onclick="openFullscreen(this)">
+                <div class="gallery-item">
                     <img src="../assets/img/kantor.jpg" alt="Kantor Balai Desa Asemdoyong">
                     <div class="gallery-overlay">
                         <span class="zoom-icon">🔍</span>
@@ -100,8 +100,8 @@
 
     <!-- Fullscreen Modal -->
     <div id="fullscreenModal" class="fullscreen-modal">
-        <span class="close-btn" onclick="closeFullscreen(event)">&times;</span>
-        <img id="fullscreenImage" src="" alt="Fullscreen Image" onclick="event.stopPropagation()">
+        <span class="close-btn">&times;</span>
+        <img id="fullscreenImage" src="" alt="Fullscreen Image">
         <div class="modal-caption" id="modalCaption"></div>
     </div>
 
@@ -135,58 +135,123 @@
         </div>
     </footer>
 
-    <script src="../assets/js/script.js"></script>
     <script>
-        // Fullscreen Gallery Functions
-        function openFullscreen(element) {
-            event.stopPropagation();
+        // 1. MOBILE MENU TOGGLE - Dijalankan pertama
+        (function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    navMenu.classList.toggle('active');
+                    console.log('Menu toggled:', navMenu.classList.contains('active'));
+                });
+
+                // Close menu saat klik link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                    });
+                });
+
+                // Close menu saat klik di luar
+                document.addEventListener('click', function(e) {
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        })();
+
+        // 2. GALLERY FULLSCREEN - Dijalankan setelah menu
+        (function() {
             const modal = document.getElementById('fullscreenModal');
             const modalImg = document.getElementById('fullscreenImage');
             const caption = document.getElementById('modalCaption');
-            const img = element.querySelector('img');
-            
-            modal.style.display = 'flex';
-            modalImg.src = img.src;
-            caption.textContent = img.alt;
-            document.body.style.overflow = 'hidden';
-        }
+            const closeBtn = document.querySelector('.close-btn');
 
-        function closeFullscreen(event) {
-            if (event) event.stopPropagation();
-            const modal = document.getElementById('fullscreenModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking on background
-        document.getElementById('fullscreenModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeFullscreen();
+            // Fungsi close modal
+            function closeModal() {
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
             }
-        });
 
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeFullscreen();
-            }
-        });
-
-        // Mobile menu toggle
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        if (navToggle) {
-            navToggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                navMenu.classList.toggle('active');
+            // Klik gallery item untuk fullscreen
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const img = this.querySelector('img');
+                    
+                    if (modal && modalImg && caption && img) {
+                        modal.style.display = 'flex';
+                        modalImg.src = img.src;
+                        caption.textContent = img.alt;
+                        document.body.style.overflow = 'hidden';
+                        console.log('Gallery opened:', img.alt);
+                    }
+                });
             });
-        }
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
+            // Close button
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeModal();
+                });
+            }
+
+            // Klik di luar gambar
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        })();
+
+        // 3. SCROLL ANIMATION
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.gallery-item, .info-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // 4. NAVBAR SCROLL
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(0, 119, 190, 1)';
+                } else {
+                    navbar.style.background = 'rgba(0, 119, 190, 0.95)';
+                }
             }
         });
     </script>
