@@ -99,9 +99,9 @@
     </section>
 
     <!-- Fullscreen Modal -->
-    <div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullscreen()">
-        <span class="close-btn">&times;</span>
-        <img id="fullscreenImage" src="" alt="Fullscreen Image">
+    <div id="fullscreenModal" class="fullscreen-modal">
+        <span class="close-btn" onclick="closeFullscreen(event)">&times;</span>
+        <img id="fullscreenImage" src="" alt="Fullscreen Image" onclick="event.stopPropagation()">
         <div class="modal-caption" id="modalCaption"></div>
     </div>
 
@@ -139,6 +139,7 @@
     <script>
         // Fullscreen Gallery Functions
         function openFullscreen(element) {
+            event.stopPropagation();
             const modal = document.getElementById('fullscreenModal');
             const modalImg = document.getElementById('fullscreenImage');
             const caption = document.getElementById('modalCaption');
@@ -150,11 +151,19 @@
             document.body.style.overflow = 'hidden';
         }
 
-        function closeFullscreen() {
+        function closeFullscreen(event) {
+            if (event) event.stopPropagation();
             const modal = document.getElementById('fullscreenModal');
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+
+        // Close modal when clicking on background
+        document.getElementById('fullscreenModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFullscreen();
+            }
+        });
 
         // Close on Escape key
         document.addEventListener('keydown', function(e) {
@@ -164,8 +173,21 @@
         });
 
         // Mobile menu toggle
-        document.getElementById('navToggle').addEventListener('click', function() {
-            document.getElementById('navMenu').classList.toggle('active');
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (navToggle) {
+            navToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     </script>
 </body>
